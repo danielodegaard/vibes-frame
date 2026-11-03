@@ -1,6 +1,6 @@
 html, body {
   margin: 0;
-  background: #0c0c0c;
+  background: #ffffff;
   overflow: hidden;
   cursor: none;
 }
@@ -11,7 +11,7 @@ html, body {
   bottom: 0;
   left: 0;
   overflow: hidden;
-  background: #0c0c0c;
+  background: #ffffff;
 }
 .scene {
   opacity: 0;
@@ -45,7 +45,7 @@ html, body {
   position: fixed;
   left: 24px;
   bottom: 20px;
-  color: #8a8a8a;
+  color: #666666;
   font: 16px/1.2 Helvetica, Arial, sans-serif;
   letter-spacing: 0.12em;
   text-transform: uppercase;

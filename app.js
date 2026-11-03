@@ -1,6 +1,6 @@
 (function () {
   var COLS = 5;
-  var GAP = 14;
+  var GAP = 36;
   var HOLD_MS = 8000;
   var FADE_MS = 1200;
   var POLL_MS = 180000;
@@ -131,7 +131,7 @@
       cell.style.top = item.y + "px";
       cell.style.width = item.w + "px";
       cell.style.height = item.h + "px";
-      cell.style.background = item.pin.color || "#1a1a1a";
+      cell.style.background = item.pin.color || "#eeeeee";
       var img = item.image;
       img.style.transformOrigin = origins[i % origins.length];
       img.alt = "";
