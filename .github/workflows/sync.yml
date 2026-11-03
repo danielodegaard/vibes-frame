@@ -24,30 +24,11 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Sync pins
-        id: sync
-        env:
-          PINTEREST_CLIENT_ID: ${{ secrets.PINTEREST_CLIENT_ID }}
-          PINTEREST_CLIENT_SECRET: ${{ secrets.PINTEREST_CLIENT_SECRET }}
-          PINTEREST_REFRESH_TOKEN: ${{ secrets.PINTEREST_REFRESH_TOKEN }}
-        run: python3 scripts/sync_api.py | tee "$RUNNER_TEMP/sync-out.txt"
-
-      - name: Store rotated refresh token
-        if: success()
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: |
-          if [ -f .refresh-token.new ]; then
-            gh secret set PINTEREST_REFRESH_TOKEN < .refresh-token.new || echo "Could not store the rotated Pinterest token. The pin list was still updated."
-            rm -f .refresh-token.new
-          fi
+      - name: Add new public pins
+        run: python3 scripts/merge_public.py
 
       - name: Commit pins.json if changed
         run: |
-          if grep -q '^NO_TOKEN$' "$RUNNER_TEMP/sync-out.txt"; then
-            echo "No Pinterest token stored yet."
-            exit 0
-          fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -- pins.json
