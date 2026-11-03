@@ -1,7 +1,7 @@
 (function () {
   var COLS = 5;
   var GAP = 36;
-  var HOLD_MS = 8000;
+  var HOLD_MS = 30000;
   var FADE_MS = 1200;
   var POLL_MS = 180000;
   var wall = document.getElementById("wall");
@@ -258,10 +258,27 @@
     navigator.wakeLock.request("screen").then(function () {}, function () {});
   }
 
+  function enterFullscreen() {
+    var el = document.documentElement;
+    if (document.fullscreenElement || document.webkitFullscreenElement) return;
+    var req = el.requestFullscreen || el.webkitRequestFullscreen || el.webkitRequestFullScreen || el.mozRequestFullScreen;
+    if (!req) return;
+    try {
+      var pending = req.call(el);
+      if (pending && pending.then) pending.then(function () {}, function () {});
+    } catch (err) {}
+  }
+
+  document.addEventListener("keydown", enterFullscreen);
+  document.addEventListener("click", enterFullscreen);
   document.addEventListener("visibilitychange", function () {
-    if (!document.hidden) requestWake();
+    if (!document.hidden) {
+      requestWake();
+      enterFullscreen();
+    }
   });
   requestWake();
+  enterFullscreen();
   fetchPins();
   setInterval(fetchPins, POLL_MS);
   setInterval(function () {
