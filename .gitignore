@@ -1,0 +1,8 @@
+.venv/
+.frame-token
+collages/*.jpg
+collages/uploaded.json
+__pycache__/
+*.pyc
+.refresh-token.new
+collages/
