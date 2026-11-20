@@ -1,8 +1,22 @@
 {
   "board": "Vibes",
   "boardUrl": "https://www.pinterest.com/danielodegaard/vibes/",
-  "updatedAt": "2026-11-18T04:15:58Z",
+  "updatedAt": "2026-11-20T03:09:04Z",
   "pins": [
+    {
+      "id": "478155685464526605",
+      "width": 564,
+      "height": 723,
+      "color": "#61523e",
+      "src": "https://i.pinimg.com/1200x/19/1c/a8/191ca89896cd9e7074731b401b00bba8.jpg"
+    },
+    {
+      "id": "478155685464526606",
+      "width": 564,
+      "height": 689,
+      "color": "#8f8f8f",
+      "src": "https://i.pinimg.com/1200x/e8/f4/88/e8f4886f38a74772b0eb8684b9c08d5d.jpg"
+    },
     {
       "id": "478155685464512567",
       "width": 564,
