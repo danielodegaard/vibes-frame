@@ -1,8 +1,15 @@
 {
   "board": "Vibes",
   "boardUrl": "https://www.pinterest.com/danielodegaard/vibes/",
-  "updatedAt": "2026-11-24T15:50:46Z",
+  "updatedAt": "2026-11-27T23:26:03Z",
   "pins": [
+    {
+      "id": "478155685464579102",
+      "width": 564,
+      "height": 831,
+      "color": "#4d513a",
+      "src": "https://i.pinimg.com/1200x/6d/59/63/6d5963c8e16f99cf9abf6433b3a381ea.jpg"
+    },
     {
       "id": "478155685464552603",
       "width": 564,
